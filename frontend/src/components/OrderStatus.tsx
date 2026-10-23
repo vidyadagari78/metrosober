@@ -111,7 +111,8 @@ export const OrderStatus: React.FC<OrderStatusProps> = ({ initialOrder, onNewOrd
       const eventId = `evt_ui_${Date.now()}`;
       // In development or review, we can post directly or invoke backend
       // Here we compute HMAC on server or send to a test simulation helper
-      const res = await fetch('/payments/webhook', {
+      const apiBase = (import.meta as any).env?.VITE_API_BASE_URL || '';
+      const res = await fetch(`${apiBase}/payments/webhook`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

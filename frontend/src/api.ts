@@ -26,7 +26,7 @@ export interface Order {
   items: OrderItem[];
 }
 
-const API_BASE = ''; // proxied via Vite to http://localhost:3000
+const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || '';
 
 export async function fetchProducts(): Promise<Product[]> {
   const res = await fetch(`${API_BASE}/products`);
