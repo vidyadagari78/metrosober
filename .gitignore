@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build outputs
+dist/
+*/dist/
+
+# Local databases & temp data
+.pgdata*
+*/.pgdata*
+
+# Environment files
+.env
+*/.env
+*.env.local
+
+# Logs
+*.log
+*/logs/
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+coverage/
